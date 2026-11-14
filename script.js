@@ -14,7 +14,7 @@ async function loadGitHubData() {
         return;
     }
 
-    // Oldingi ma'lumotlarni tozalash va yuklanish belgisini ko'rsatish
+    // Oldingi ma'lumotlarni tozalash va yuklanish belgisini  ko'rsatish
     grid.innerHTML = '';
     loading.classList.remove('hidden');
 
