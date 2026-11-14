@@ -6,6 +6,10 @@
     <title>Dasturchi Portfoliosi | Loyihalar Galereyasi</title>
     <!-- TailwindCSS CDN orqali ulangan -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- React va Babel kutubxonalari -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body class="bg-slate-900 text-white font-sans">
 
@@ -21,70 +25,36 @@
         </div>
     </header>
 
-    <!-- Asosiy tanishtiruv (Hero Section) -->
-    <section id="about" class="max-w-5xl mx-auto px-4 py-16 text-center">
-        <img id="avatar" src="https://via.placeholder.com/150" alt="Profil rasmi" 
-             class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-sky-400 shadow-lg">
-        <h1 id="dev-name" class="text-4xl font-extrabold mb-3">Sarvinoz Xolbo‘tayeva</h1>
-        <p id="dev-bio" class="text-slate-400 max-w-xl mx-auto mb-6 text-lg">
-            Axborot tizimlari va texnologiyalari yo'nalishi talabasi. Zamonaviy veb-ilovalar va foydalanuvchi interfeyslarini yaratishga qiziqaman.
-        </p>
-        <div class="flex justify-center gap-4">
-            <a href="#projects" class="bg-sky-500 hover:bg-sky-600 text-white px-6 py-2.5 rounded-lg font-medium transition">
-                Loyihalarni ko'rish
-            </a>
-            <a id="github-link" href="https://github.com" target="_blank" 
-               class="border border-slate-600 hover:border-sky-400 px-6 py-2.5 rounded-lg font-medium transition">
-                GitHub Profil
-            </a>
-        </div>
-    </section>
+    <main>
+        <!-- Asosiy tanishtiruv (Profile komponenti shu yerga chiziladi) -->
+        <section id="about" class="max-w-5xl mx-auto px-4 py-16 text-center">
+            <div id="profile-root"></div>
+        </section>
 
-    <!-- Ko'nikmalar (Skills) -->
-    <section id="skills" class="bg-slate-800/50 py-14 border-y border-slate-800">
-        <div class="max-w-5xl mx-auto px-4">
-            <h2 class="text-2xl font-bold mb-8 text-center">Texnologik Ko'nikmalar</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                <div class="bg-slate-800 p-4 rounded-xl border border-slate-700">HTML5 & Semantika</div>
-                <div class="bg-slate-800 p-4 rounded-xl border border-slate-700">CSS3 & TailwindCSS</div>
-                <div class="bg-slate-800 p-4 rounded-xl border border-slate-700">JavaScript (ES6+)</div>
-                <div class="bg-slate-800 p-4 rounded-xl border border-slate-700">Git & GitHub API</div>
+        <!-- Ko'nikmalar (Skills) -->
+        <section id="skills" class="bg-slate-800/50 py-14 border-y border-slate-800">
+            <div class="max-w-5xl mx-auto px-4">
+                <h2 class="text-2xl font-bold mb-8 text-center">Texnologik Ko'nikmalar</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                    <div class="bg-slate-800 p-4 rounded-xl border border-slate-700">HTML5 & Semantika</div>
+                    <div class="bg-slate-800 p-4 rounded-xl border border-slate-700">CSS3 & TailwindCSS</div>
+                    <div class="bg-slate-800 p-4 rounded-xl border border-slate-700">JavaScript (ES6+)</div>
+                    <div class="bg-slate-800 p-4 rounded-xl border border-slate-700">Git & GitHub API</div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Loyihalar Galereyasi (GitHub API orqali yuklanadi) -->
-    <section id="projects" class="max-w-5xl mx-auto px-4 py-16">
-        <div class="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
-            <div>
-                <h2 class="text-2xl font-bold">GitHub Loyihalar Galereyasi</h2>
-                <p class="text-slate-400 text-sm">GitHub API orqali real vaqtda yuklangan repozitoriylar</p>
-            </div>
-            <!-- Istalgan GitHub foydalanuvchisini qidirish -->
-            <div class="flex gap-2">
-                <input type="text" id="username-input" placeholder="GitHub username (masalan: torvalds)" 
-                       class="bg-slate-800 border border-slate-700 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-sky-400">
-                <button onclick="loadGitHubData()" 
-                        class="bg-sky-500 hover:bg-sky-600 px-4 py-2 rounded-lg text-sm font-medium transition">
-                    Yuklash
-                </button>
-            </div>
-        </div>
-
-        <!-- Yuklanish indikatori -->
-        <div id="loading" class="text-center py-8 text-sky-400 hidden">Ma'lumotlar yuklanmoqda...</div>
-
-        <!-- Loyihalar kartochkalari tushadigan joy -->
-        <div id="repos-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- JavaScript bu yerga kartochkalarni avtomatik qo'shadi -->
-        </div>
-    </section>
+        <!-- Loyihalar Galereyasi (RepoList komponenti shu yerga chiziladi) -->
+        <section id="projects" class="max-w-5xl mx-auto px-4 py-16">
+            <div id="root"></div>
+        </section>
+    </main>
 
     <!-- Pastki qism (Footer) -->
     <footer class="text-center py-8 text-slate-500 text-sm border-t border-slate-800">
         © 2026 Veb tizimlari fani | 20-variant Mustaqil ta'lim loyihasi
     </footer>
 
-    <script src="script.js"></script>
+    <script type="text/babel" src="app.jsx"></script>
 </body>
 </html>

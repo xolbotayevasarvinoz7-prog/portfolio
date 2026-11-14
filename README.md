@@ -1,13 +1,19 @@
-# Veb Tizimlari Fani - Capstone Loyihasi (20-variant)
+# DevPortfolio.uz
 
-**Mavzu:** Dasturchilar portfoliosi va loyihalar galereyasi  
-**Talaba:** Xolbo‘tayeva Sarvinoz (262-24-guruh)
+Veb tizimlari fani, mustaqil ta'lim, 20-variant.
+Dasturchi portfoliosi va GitHub loyihalar galereyasi.
 
-## Ishlatilgan texnologiyalar:
-- HTML5, TailwindCSS (CDN)
-- JavaScript (ES6+, Fetch API)
+## Texnologiyalar
+- HTML5, TailwindCSS
+- React 18 (useState, useEffect)
 - GitHub REST API
 
-## Loyihani ishga tushirish:
-1. Ushbu repository'ni kompyuteringizga ko'chirib oling.
-2. `index.html` faylini istalgan brauzerda oching.
+## Ishga tushirish
+1. Loyihani yuklab oling: `git clone <repozitoriy manzili>`
+2. VS Code'da papkani oching.
+3. Live Server kengaytmasi bilan `index.html` ni oching.
+
+## Imkoniyatlar
+- GitHub profilidan rasm, ism va bio avtomatik yuklanadi
+- Istalgan GitHub username bo'yicha loyihalarni qidirish
+- Yuklanish va xatolik holatlari
